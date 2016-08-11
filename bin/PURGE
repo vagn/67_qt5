@@ -1,0 +1,191 @@
+
+pkgs="
+	qdbus-qt5
+	qt5-default
+	qt5-doc
+	qt5-doc-html
+	qt5-image-formats-plugins
+	qt5-qmake
+	qt5keychain-dev
+	qtcreator
+"
+
+aptitude purge $pkgs
+
+exit 0
+
+p   libqt5serialport5-dev           - Qt 5 serial port development files        
+p   fcitx-frontend-qt5              - Free Chinese Input Toy of X - Qt5 IM Modul
+p   fcitx-libs-qt5                  - Free Chinese Input Toy of X - D-Bus client
+p   fcitx-libs-qt5-dbg              - Free Chinese Input Toy of X - Debugging sy
+p   fcitx-libs-qt5-dev              - Free Chinese Input Toy of X - Devel files 
+p   libphonon4qt5-4                 - multimedia framework from KDE using Qt 5 -
+p   libphonon4qt5-dev               - multimedia framework from KDE using Qt 5 -
+p   libphonon4qt5experimental-dev   - multimedia framework from KDE using Qt 5 -
+p   libphonon4qt5experimental-dev:i - multimedia framework from KDE using Qt 5 -
+p   libphonon4qt5experimental4      - multimedia framework from KDE using Qt 5 -
+p   libpoppler-qt5-1                - PDF rendering library (Qt 5 based shared l
+p   libpoppler-qt5-dev              - PDF rendering library -- development files
+p   libqt5bluetooth5                - Qt Connectivity Bluetooth module          
+i A libqt5clucene5                  - Qt 5 CLucene module                       
+p   libqt5concurrent5               - Qt 5 concurrent module                    
+i A libqt5core5a                    - Qt 5 core module                          
+i A libqt5dbus5                     - Qt 5 D-Bus module                         
+p   libqt5declarative5              - Qt Quick 1 module for Qt 5                
+i A libqt5designer5                 - Qt 5 designer module                      
+p   libqt5designercomponents5       - Qt 5 Designer components module           
+i A libqt5gui5                      - Qt 5 GUI module                           
+i A libqt5help5                     - Qt 5 help module                          
+p   libqt5keychain0                 - Qt API to store passwords (QT5 version)   
+p   libqt5multimedia5               - Qt 5 Multimedia module                    
+p   libqt5multimedia5-plugins       - Qt 5 Multimedia module plugins            
+p   libqt5multimediaquick-p5        - Qt 5 Multimedia Quick module              
+p   libqt5multimediawidgets5        - Qt 5 Multimedia Widgets module            
+i A libqt5network5                  - Qt 5 network module                       
+p   libqt5nfc5                      - Qt Connectivity NFC module                
+p   libqt5opengl5                   - Qt 5 OpenGL module                        
+p   libqt5opengl5-dev               - Qt 5 OpenGL library development files     
+p   libqt5positioning5              - Qt Positioning module                     
+p   libqt5positioning5-plugins      - Qt Positioning module - position plugins  
+i A libqt5printsupport5             - Qt 5 print support module                 
+p   libqt5qml5                      - Qt 5 QML module                           
+p   libqt5quick5                    - Qt 5 Quick library                        
+p   libqt5quickparticles5           - Qt 5 Quick particules module              
+p   libqt5quicktest5                - Qt 5 Quick Test library                   
+p   libqt5quickwidgets5             - Qt 5 Quick Widgets library                
+p   libqt5scintilla2-11             - Qt5 port of the Scintilla source code edit
+p   libqt5scintilla2-11-dbg         - Qt5 port of the Scintilla source code edit
+p   libqt5scintilla2-designer       - Qt5 Designer plugin for QScintilla 2      
+p   libqt5scintilla2-designer-dbg   - Qt5 Designer plugin for QScintilla 2 (debu
+p   libqt5scintilla2-designer-dbg:i - Qt5 Designer plugin for QScintilla 2 (debu
+p   libqt5scintilla2-dev            - Scintilla source code editing widget for Q
+p   libqt5scintilla2-l10n           - Scintilla source code editing widget for Q
+p   libqt5script5                   - Qt 5 script module                        
+p   libqt5scripttools5              - Qt 5 script tools module                  
+p   libqt5sensors5                  - Qt Sensors module                         
+-dev              - Qt 5 Sensors development files            
+p   libqt5serialport5               - Qt 5 serial port support                  
+i A libqt5sql5                      - Qt 5 SQL module                           
+p   libqt5sql5-mysql                - Qt 5 MySQL database driver                
+p   libqt5sql5-odbc                 - Qt 5 ODBC database driver                 
+p   libqt5sql5-psql                 - Qt 5 PostgreSQL database driver           
+i A libqt5sql5-sqlite               - Qt 5 SQLite 3 database driver             
+p   libqt5sql5-tds                  - Qt 5 FreeTDS database driver              
+p   libqt5svg5                      - Qt 5 SVG module                           
+p   libqt5svg5-dev                  - Qt 5 SVG module development files         
+p   libqt5svg5-private-dev          - Qt 5 SVG module private development files 
+i A libqt5test5                     - Qt 5 test module                          
+p   libqt5webkit5                   - Web content engine library for Qt         
+p   libqt5webkit5-dbg               - Web content engine library for Qt - debugg
+p   libqt5webkit5-dev               - Web content engine library for Qt - develo
+p   libqt5websockets5               - Qt 5 Web Sockets module                   
+p   libqt5websockets5-dev           - Qt 5 Web Sockets module - development file
+i A libqt5widgets5                  - Qt 5 widgets module                       
+p   libqt5x11extras5                - Qt 5 X11 extras                           
+p   libqt5x11extras5-dev            - Qt 5 X11 extras development files         
+i A libqt5xml5                      - Qt 5 XML module                           
+p   libqt5xmlpatterns5              - Qt 5 XML patterns module                  
+p   libqt5xmlpatterns5-dev          - Qt 5 XML patterns development files       
+p   libqt5xmlpatterns5-private-dev  - Qt 5 XML patterns private development file
+p   libqt5xmlpatterns5-private-dev: - Qt 5 XML patterns private development file
+p   libquazip-qt5-1                 - C++ wrapper wrapper for ZIP/UNZIP (Qt5 bui
+p   libquazip-qt5-dbg               - debugging symbols for libquazip (Qt5 build
+p   libquazip-qt5-dev               - C++ wrapper wrapper for ZIP/UNZIP (develop
+v   libquazip1-qt5                  -                                           
+p   phonon4qt5                      - multimedia framework from KDE using Qt 5 -
+v   phonon4qt5-backend              -                                           
+p   phonon4qt5-backend-gstreamer    - Phonon Qt5 GStreamer 1.0 backend          
+p   phonon4qt5-backend-gstreamer:i3 - Phonon Qt5 GStreamer 1.0 backend          
+p   phonon4qt5-backend-gstreamer-db - debugging symbols for the Phonon Qt5 GStre
+p   phonon4qt5-backend-gstreamer-db - debugging symbols for the Phonon Qt5 GStre
+p   phonon4qt5-backend-null         - multimedia framework from KDE using Qt 5 -
+p   phonon4qt5-backend-vlc          - Phonon4Qt5 VLC backend                    
+p   phonon4qt5-backend-vlc-dbg      - Phonon4Qt5 VLC backend debugging symbols  
+p   phonon4qt5-dbg                  - multimedia framework from KDE using Qt 5 -
+v   phonon4qt5experimental-abi-1    -                                           
+v   phonon4qt5experimental-abi-1:i3 -                                           
+p   pyqt5-dev                       - Development files for PyQt5               
+p   pyqt5-dev-tools                 - Development tools for PyQt5               
+p   pyqt5-doc                       - Documentation for PyQt5                   
+p   pyqt5-examples                  - Examples and demos for PyQt5              
+p   pyqt5.qsci-dev                  - Development files for Python Qscintilla2 (
+p   python-dbus.mainloop.pyqt5      - D-Bus Support for PyQt5 with Python       
+p   python-dbus.mainloop.pyqt5-dbg  - D-Bus Support for PyQt5 (debug extensions 
+p   python-dbus.mainloop.pyqt5-dbg: - D-Bus Support for PyQt5 (debug extensions 
+p   python-pyqt5                    - Python bindings for Qt5                   
+p   python-pyqt5-dbg                - Python bindings for Qt5 (debug extensions)
+p   python-pyqt5.enginio            - Python 2 bindings for Enginio library     
+p   python-pyqt5.enginio-dbg        - Python 2 bindings for Enginio library (deb
+p   python-pyqt5.qtmultimedia       - Python bindings for Qt5's Multimedia modul
+p   python-pyqt5.qtmultimedia-dbg   - Python bindings for Qt5's Multimedia modul
+p   python-pyqt5.qtmultimedia-dbg:i - Python bindings for Qt5's Multimedia modul
+p   python-pyqt5.qtopengl           - Python bindings for Qt5's OpenGL module   
+p   python-pyqt5.qtopengl-dbg       - Python bindings for Qt5's OpenGL module (d
+p   python-pyqt5.qtpositioning      - Python bindings for QtPositioning module  
+p   python-pyqt5.qtpositioning-dbg  - Python bindings for QtPositioning module (
+p   python-pyqt5.qtpositioning-dbg: - Python bindings for QtPositioning module (
+p   python-pyqt5.qtquick            - Python bindings for QtQuick module        
+p   python-pyqt5.qtquick-dbg        - Python bindings for QtQuick module (debug 
+p   python-pyqt5.qtsensors          - Python bindings for QtSensors module      
+p   python-pyqt5.qtsensors-dbg      - Python bindings for QtSensors module (debu
+p   python-pyqt5.qtserialport       - Python bindings for QtSerialPort module   
+p   python-pyqt5.qtserialport-dbg   - Python bindings for QtSerialPort module (d
+p   python-pyqt5.qtserialport-dbg:i - Python bindings for QtSerialPort module (d
+p   python-pyqt5.qtsql              - Python bindings for Qt5's SQL module      
+p   python-pyqt5.qtsql-dbg          - Python bindings for Qt5's SQL module (debu
+p   python-pyqt5.qtsvg              - Python bindings for Qt5's SVG module      
+p   python-pyqt5.qtsvg-dbg          - Python bindings for Qt5's SVG module (debu
+p   python-pyqt5.qtwebkit           - Python bindings for Qt5's WebKit module   
+p   python-pyqt5.qtwebkit-dbg       - Python bindings for Qt5's WebKit module (d
+p   python-pyqt5.qtwebsockets       - Python bindings for Qt5's WebSockets modul
+p   python-pyqt5.qtwebsockets-dbg   - Python bindings for Qt5's WebSockets modul
+p   python-pyqt5.qtwebsockets-dbg:i - Python bindings for Qt5's WebSockets modul
+p   python-pyqt5.qtx11extras        - Python bindings for QtX11Extras module    
+p   python-pyqt5.qtx11extras-dbg    - Python bindings for QtX11Extras module (de
+p   python-pyqt5.qtx11extras-dbg:i3 - Python bindings for QtX11Extras module (de
+p   python-pyqt5.qtxmlpatterns      - Python bindings for Qt5's XmlPatterns modu
+p   python-pyqt5.qtxmlpatterns-dbg  - Python bindings for Qt5's XmlPatterns modu
+p   python-pyqt5.qtxmlpatterns-dbg: - Python bindings for Qt5's XmlPatterns modu
+p   python3-dbus.mainloop.pyqt5     - D-Bus Support for PyQt5 with Python 3     
+p   python3-dbus.mainloop.pyqt5:i38 - D-Bus Support for PyQt5 with Python 3     
+p   python3-dbus.mainloop.pyqt5-dbg - D-Bus Support for PyQt5 (debug extensions 
+p   python3-dbus.mainloop.pyqt5-dbg - D-Bus Support for PyQt5 (debug extensions 
+i   python3-pyqt5                   - Python 3 bindings for Qt5                 
+p   python3-pyqt5-dbg               - Python 3 bindings for Qt5 (debug extension
+p   python3-pyqt5.enginio           - Python 3 bindings for Enginio library     
+p   python3-pyqt5.enginio-dbg       - Python 3 bindings for Enginio library (deb
+p   python3-pyqt5.qsci              - Python 3 bindings for QScintilla 2 with Qt
+p   python3-pyqt5.qsci-dbg          - Python 3 bindings for QScintilla 2 (Qt 5 d
+p   python3-pyqt5.qtmultimedia      - Python 3 bindings for Qt5's Multimedia mod
+p   python3-pyqt5.qtmultimedia-dbg  - Python 3 bindings for Qt5's Multimedia mod
+p   python3-pyqt5.qtmultimedia-dbg: - Python 3 bindings for Qt5's Multimedia mod
+p   python3-pyqt5.qtopengl          - Python 3 bindings for Qt5's OpenGL module 
+p   python3-pyqt5.qtopengl-dbg      - Python 3 bindings for Qt5's OpenGL module 
+p   python3-pyqt5.qtpositioning     - Python 3 bindings for QtPositioning module
+p   python3-pyqt5.qtpositioning:i38 - Python 3 bindings for QtPositioning module
+p   python3-pyqt5.qtpositioning-dbg - Python 3 bindings for QtPositioning module
+p   python3-pyqt5.qtpositioning-dbg - Python 3 bindings for QtPositioning module
+p   python3-pyqt5.qtquick           - Python 3 bindings for QtQuick module      
+p   python3-pyqt5.qtquick-dbg       - Python 3 bindings for QtQuick module (debu
+p   python3-pyqt5.qtsensors         - Python 3 bindings for QtSensors module    
+p   python3-pyqt5.qtsensors-dbg     - Python 3 bindings for QtSensors module (de
+p   python3-pyqt5.qtsensors-dbg:i38 - Python 3 bindings for QtSensors module (de
+p   python3-pyqt5.qtserialport      - Python 3 bindings for QtSerialPort module 
+p   python3-pyqt5.qtserialport-dbg  - Python 3 bindings for QtSerialPort module 
+p   python3-pyqt5.qtserialport-dbg: - Python 3 bindings for QtSerialPort module 
+p   python3-pyqt5.qtsql             - Python 3 bindings for Qt5's SQL module    
+p   python3-pyqt5.qtsql-dbg         - Python 3 bindings for Qt5's SQL module (de
+p   python3-pyqt5.qtsvg             - Python 3 bindings for Qt5's SVG module    
+p   python3-pyqt5.qtsvg-dbg         - Python 3 bindings for Qt5's SVG module (de
+p   python3-pyqt5.qtwebkit          - Python 3 bindings for Qt5's WebKit module 
+p   python3-pyqt5.qtwebkit-dbg      - Python 3 bindings for Qt5's WebKit module 
+p   python3-pyqt5.qtwebsockets      - Python 3 bindings for Qt5's WebSockets mod
+p   python3-pyqt5.qtwebsockets-dbg  - Python 3 bindings for Qt5's WebSockets mod
+p   python3-pyqt5.qtwebsockets-dbg: - Python 3 bindings for Qt5's WebSockets mod
+p   python3-pyqt5.qtx11extras       - Python 3 bindings for QtX11Extras module  
+p   python3-pyqt5.qtx11extras-dbg   - Python 3 bindings for QtX11Extras module (
+p   python3-pyqt5.qtx11extras-dbg:i - Python 3 bindings for QtX11Extras module (
+p   python3-pyqt5.qtxmlpatterns     - Python 3 bindings for Qt5's XmlPatterns mo
+p   python3-pyqt5.qtxmlpatterns:i38 - Python 3 bindings for Qt5's XmlPatterns mo
+p   python3-pyqt5.qtxmlpatterns-dbg - Python 3 bindings for Qt5's XmlPatterns mo
+p   python3-pyqt5.qtxmlpatterns-dbg - Python 3 bindings for Qt5's XmlPatterns mo

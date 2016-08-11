@@ -1,2 +1,2 @@
 # 67_qt5
-meesing about with qt5.
+Messing about with qt5.

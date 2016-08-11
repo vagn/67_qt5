@@ -1,0 +1,114 @@
+#!/bin/bash
+
+help_blurb='
+	option: -r -s
+'
+
+typeset -i opt_h=0
+typeset -i opt_s=1
+typeset -i opt_r=0
+typeset -i opt_m=0
+typeset -i opt_u=0
+typeset -i opt_U=0
+	user=$LOGNAME
+	sudofix1=
+	sudofix2=
+
+while getopts :hrmUu:vsS OPTION
+do
+ case $OPTION in
+  h) opt_h=1 echo $help_blurb ; exit 0 ;; # print help text and exit
+  m) opt_m=1 ;;		# menu, single quoted pattern as arg
+  r|v) opt_r=1 ;;	# read/view only
+  s|S) opt_s=0 ;;	# no timestamp
+  U)	opt_u=1		# as another user
+	user=vagn
+	sudofix1="sudo su vagn -c"
+	sudofix2=sudo
+	;;
+  u)	opt_u=1		# as another user
+	user=$OPTARG
+	sudofix1="sudo su $OPTARG -c"
+	sudofix2=sudo
+	;;
+  :) echo "$0: $OPTION missing argument!"
+     exit 2 ;;
+ \?) echo "$0: $OPTION is an invalid option!"
+     exit 2 ;;
+ esac
+done
+shift $(( $OPTIND-1 ))
+
+timestamp()
+{
+	if [ $opt_s -eq 1 ] ; then
+		echo
+		echo ============================
+		date
+		echo ----------------------------
+		echo
+	fi
+}
+
+D=$(realpath $(dirname $(realpath $0))/..)/doc
+#echo $D
+#exit 0
+#D=~/s5/etc/log
+#mkdir -p $D
+
+if [ $opt_m -eq 1 ] ; then
+	echo selecting from $D
+	select selection in $(cd $D && ls $*)
+	do
+		name=$selection
+		break;
+	done
+	[ -z "$selection" ] && name="$REPLY"
+	[ -z "$name" ] && exit 1
+elif [ $# -gt 0 ] ; then
+        name=$1
+else
+	name=$(basename $0).`hostname -s`
+fi
+
+name=${name%.txt}.txt
+file=$D/$name
+
+if [ ! -f "$file" ] ; then
+	echo not found $file
+	echo enter to create new file
+	read
+fi
+
+
+if [ -f $file ] ; then
+	OPTIND=0
+	set -- $(head -5 $file | grep 'log options:' | sed 's/^.*log options: //' )
+	#shift
+	#shift
+	while getopts :rvsS OPTION
+	do
+	 case $OPTION in
+	  r|v) opt_r=1 ;;
+          s|S) opt_s=0 ;;	# no timestamp
+	  *) : ;;
+	 esac
+	done
+	shift $(( $OPTIND-1 ))
+fi
+
+if [ $opt_r -eq 0 ] ; then
+	
+	if [ $opt_u -eq 0 ] ; then
+		timestamp >> $file
+	else
+		timestamp | $sudofix1 "cat >> $file"
+	fi
+	$sudofix2 vim -n -C +$ $file
+else
+	$sudofix2 view -n -C +$ $file
+fi
+
+#nvi +$ $file
+
+echo $file

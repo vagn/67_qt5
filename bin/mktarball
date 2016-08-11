@@ -1,0 +1,12 @@
+
+host=`hostname`
+d=`pwd`
+name=`basename $d`
+tag=`date +"%Y%m%d%H%M%S"`
+echo $tag
+#exit 0
+
+args="--exclude=.svn"
+
+( cd .. && tar czf $name-$tag-$host.tgz $args $name )
+

@@ -98,3 +98,19 @@ Thu Aug 11 18:30:17 EDT 2016
 some trivial edits
 also changin Makefile defailt to git satus
 
+
+============================
+Thu Aug 11 18:51:50 EDT 2016
+----------------------------
+
+http://stackoverflow.com/questions/10176601/git-diff-file-against-its-last-change
+
+
+git log -p [--follow] [-1] <path>
+
+-p (also -u or --patch) is hidden deeeeeeeep in the git-log man page, and is actually a display option for git-diff. When used with log, it actually shows the patch that would be generated for each commit, along with the commit information--and hides commits that do not touch the specified <path>.
+
+(This behavior is described in the paragraph on --full-diff, which causes the full diff of each commit to be shown.)
+
+Without -1, this shows all non-zero diffs of the specified file; with -1, it shows just the most recent change. (-n 1 can be used instead of -1.) --follow is required to see changes that occurred prior to a rename.
+`

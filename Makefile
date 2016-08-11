@@ -1,7 +1,7 @@
 
 default: status
 
-changelog note:
+changelog note todo progress:
 	bin/log $@
 
 empty-dirs:
@@ -17,3 +17,7 @@ trivial:
 
 status:
 	git status
+
+pdf:
+	atril ~/Documents/qt5_cadaques.pdf &
+

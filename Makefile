@@ -1,5 +1,5 @@
 
-default: note
+default: status
 
 changelog note:
 	bin/log $@
@@ -11,3 +11,9 @@ empty-dirs:
 
 push pull:
 	git $@ origin master
+
+trivial:
+	git commit -m 'trivial edit'
+
+status:
+	git status

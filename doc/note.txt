@@ -37,9 +37,19 @@ https://github.com/new
 git init
 git add
 git commit
-git config --global push.default simple  # once only per repo (test this)
-git remote add origin https://github.com/vagn/something.git
+#git config --global push.default simple  # once only per repo (test this)
+git remote add origin https://github.com/vagn/67_qt5.git
+#git pull origin master
+git push origin master
+
+ssh-keygen ...
+ssh-add ~/.ssh/github_05_rsa
+ssh -T git@github.com
+git remote set-url origin git@github.com:vagn/67_qt5.git
+
 git pull origin master
+git add
+git commit
 git push origin master
 
 ============================
@@ -80,3 +90,11 @@ A2: get it on gihub first, then do some deep diffs and copies.
     Finally, push/pull.  Also, always push at the end ofthe day so you can pull
     at you next sign-on (wherever that may be.)
     It helps to keep s31 up to date.
+
+============================
+Thu Aug 11 18:30:17 EDT 2016
+----------------------------
+
+some trivial edits
+also changin Makefile defailt to git satus
+

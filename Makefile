@@ -1,8 +1,11 @@
 
 default: status
 
-changelog note todo progress:
+changelog todo progress:
 	bin/log $@
+
+note:
+	bin/log -m 
 
 empty-dirs:
 	@for d in bin doc etc lib man mnt projects src test tmp var ; do \

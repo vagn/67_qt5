@@ -1,0 +1,61 @@
+
+============================
+Fri Aug 12 08:18:17 EDT 2016
+----------------------------
+
+based on:
+
+http://nvie.com/posts/a-successful-git-branching-model/
+
+============================
+Fri Aug 12 08:45:15 EDT 2016
+----------------------------
+
+https://nathanhoad.net/how-to-delete-a-remote-git-tag
+
+How to: Delete a remote Git tag
+
+You probably won't need to do this often (if ever at all) but just in
+case, here is how to delete a tag from a remote Git repository.
+
+If you have a tag named '12345' then you would just do this:
+
+git tag -d 12345
+git push origin :refs/tags/12345
+
+That will remove '12345' from the remote repository.
+
+============================
+Fri Aug 12 08:46:45 EDT 2016
+----------------------------
+
+the mechanics of branching and tagging:
+
+https://www.drupal.org/node/1066342
+https://www.drupal.org/node/1659588
+https://www.drupal.org/node/1015226
+https://www.drupal.org/node/1127732
+
+tagging:
+
+git tag 7.x-1.0
+git push --tags
+git push origin tag 7.x-1.0
+git tag -l
+
+branching:
+
+git checkout -b 7.x-2.x
+git push origin 7.x-2.x
+git checkout 7.x-2.x
+git branch -v
+
+The branch with the asterisk next to it is the active branch:
+
+git checkout -b 7.x-1.x
+git push -u origin 7.x-1.x	# local branch auto traks remote branch
+
+vagn@yuna:~/Projects/67_qt5/doc$ git branch -a
+* master
+  remotes/origin/master
+

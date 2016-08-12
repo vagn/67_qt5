@@ -13,7 +13,7 @@ push pull:
 	git $@ origin master
 
 trivial:
-	git commit -m 'trivial edit'
+	git commit -m "$@ edit"
 
 status:
 	git status

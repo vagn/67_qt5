@@ -120,3 +120,17 @@ http://stackoverflow.com/questions/10176601/git-diff-file-against-its-last-chang
 	-1, it shows just the most recent change. (-n 1 can be used instead of
 	-1.) --follow is required to see changes that occurred prior to a rename.
 
+
+============================
+Fri Aug 12 08:08:32 EDT 2016
+----------------------------
+
+added .gitignore file for qt that I found on github.
+Added entries to ignore the diretories tmp, mnt, var, examples.
+
+you can edit an unpushed commit with:
+
+	git commit -amend
+
+If the commit has been pushed it gets complicated (don;t do that).
+

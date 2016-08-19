@@ -1,0 +1,163 @@
+
+============================
+Wed Aug 10 15:13:56 EDT 2016
+----------------------------
+
+started project.
+created  directory structure.
+
+bin/ doc/ etc/ lib/ Makefile man/ mnt/ projects/ RUN src/ test/ tmp/ var/
+
+projects/ os for qt projects.
+src/ is for other code.
+
+since empty dirs don't pass through git there is
+
+	make empty-dirs
+
+============================
+Wed Aug 10 15:23:31 EDT 2016
+----------------------------
+
+What is this project?
+something I can host on github, and keep
+up to date on various machines I work on.
+I don't expect there will be any big secrets here.
+Just student notes, really.
+
+I will aim for an hour a day of activity.
+Structure will be my usual Q/A format.
+
+Q1: How to get this up on github? I already have an account.
+
+A1.1: you are out of time here.  tar it up and continue from home.
+A1.2:
+
+https://github.com/new
+git init
+git add
+git commit
+#git config --global push.default simple  # once only per repo (test this)
+git remote add origin https://github.com/vagn/67_qt5.git
+#git pull origin master
+git push origin master
+
+ssh-keygen ...
+ssh-add ~/.ssh/github_05_rsa
+ssh -T git@github.com
+git remote set-url origin git@github.com:vagn/67_qt5.git
+
+git pull origin master
+git add
+git commit
+git push origin master
+
+============================
+Thu Aug 11 14:53:49 EDT 2016
+----------------------------
+
+uploading to github:
+
+https://github.com/
+https://github.com/new
+http://nvie.com/posts/a-successful-git-branching-model/
+http://git-scm.com/book/en/v2
+https://www.atlassian.com/git/?utm_source=dac&utm_medium=blog&utm_campaign=git
+https://coderwall.com/p/euwpig/a-better-git-log
+http://gitolite.com/gitolite/index.html
+http://stackoverflow.com/questions/12799719/how-to-upload-a-project-to-github
+https://git-scm.com/book/en/v2
+
+
+qt5 stuff:
+
+http://qmlbook.github.io/
+https://www.codeschool.com/
+http://localhost/cgi-bin/dwww/usr/share/doc/qt5-doc-html/html/index.html?type=html
+http://doc.qt.io/qt-5/qtwebkit-bridge.html
+http://www.bogotobogo.com/Qt/Qt5_WebKit_WebView_WebBrowser_QtCreator.php
+http://doc.qt.io/
+http://superuser.com/questions/961185/switch-between-qt4-and-qt5-with-environment-variables
+http://doc.qt.io/qt-5/index.html
+http://doc.qt.io/qt-5/tutorials-addressbook.html
+http://wiki.qt.io/Qt_for_beginners_Hello_World
+http://doc.qt.io/qt-5/gettingstartedqt.html
+http://www.voidrealms.com/index.php?r=tutorial/index
+http://www.qtcentre.org/threads/59452-A-complete-step-by-step-reference-for-qt-5-3-0-beginners
+
+Q2: consolidating the already started and diverged versions.
+A2: get it on gihub first, then do some deep diffs and copies.
+    Finally, push/pull.  Also, always push at the end ofthe day so you can pull
+    at your next sign-on (wherever that may be.)
+    Also, keep s31 up to date.
+
+============================
+Thu Aug 11 18:30:17 EDT 2016
+----------------------------
+
+some trivial edits
+also changing Makefile default to git status
+
+
+============================
+Thu Aug 11 18:51:50 EDT 2016
+----------------------------
+
+http://stackoverflow.com/questions/10176601/git-diff-file-against-its-last-change
+
+	git log -p [--follow] [-1] <path>
+
+	-p (also -u or --patch) is hidden deeeeeeeep in the git-log man page,
+	and is actually a display option for git-diff. When used with log,
+	it actually shows the patch that would be generated for each commit,
+	along with the commit information--and hides commits that do not touch
+	the specified <path>.
+
+	(This behavior is described in the paragraph on --full-diff, which causes
+	the full diff of each commit to be shown.)
+
+	Without -1, this shows all non-zero diffs of the specified file; with
+	-1, it shows just the most recent change. (-n 1 can be used instead of
+	-1.) --follow is required to see changes that occurred prior to a rename.
+
+
+============================
+Fri Aug 12 08:08:32 EDT 2016
+----------------------------
+
+added .gitignore file for qt that I found on github.
+Added entries to ignore the diretories tmp, mnt, var, examples.
+
+you can edit an unpushed commit with:
+
+	git commit -amend
+
+If the commit has been pushed it gets complicated (don;t do that).
+
+
+============================
+Fri Aug 19 08:32:17 EDT 2016
+----------------------------
+
+use master on /s31
+
+1. set up bare repo
+mkdir /s31/git-repos/70_rads.git
+cd /s31/git-repos/70_rads.git
+git --bare init
+
+2. point to repo
+git remote remove origin
+git remote add origin /s31/git-repos/70_rads.git
+
+3. initial pull/push
+git pull origin master
+git push origin master
+
+4. use it somewhere else
+mkdir 70_rads
+cd 70_rads
+git init
+git remote add origin /s31/git-repos/70_rads
+git pull origin master
+

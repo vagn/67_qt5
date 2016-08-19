@@ -15,7 +15,7 @@ empty-dirs:
 push pull:
 	git $@ origin master
 
-trivial:
+trivial obvious:
 	git commit -m "$@ edit"
 
 status:

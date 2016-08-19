@@ -134,3 +134,25 @@ you can edit an unpushed commit with:
 
 If the commit has been pushed it gets complicated (don;t do that).
 
+
+============================
+Fri Aug 19 08:32:17 EDT 2016
+----------------------------
+
+use master on /s31
+
+1. a simple copy
+cp -a 70_rads /s31/git-repos/70_rads
+
+2. get rid of the old copy
+mv /s31/git-repos/70_rads /s31/git-repos/70_rads-saved
+`
+3. clone from the master in s31
+git clone /s31/git-repos/70_rads 70_rads
+
+4. when finished creating new bugs
+git push origin master
+
+5. local copy no longer needed (start at step 3 next time)
+   rm -rf 70_rads 70_rads-saved
+
